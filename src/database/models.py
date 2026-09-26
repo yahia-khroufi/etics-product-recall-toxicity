@@ -1,0 +1,1 @@
+"""Modèles SQLAlchemy du domaine."""

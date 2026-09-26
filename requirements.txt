@@ -1,0 +1,12 @@
+# API et validation
+fastapi
+uvicorn[standard]
+pydantic
+
+# Données et persistance
+sqlalchemy
+
+# Traitement et évaluation
+pandas
+numpy
+
