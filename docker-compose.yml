@@ -1,7 +1,29 @@
 services:
+  db:
+    image: pgvector/pgvector:pg16      # PostgreSQL 16 avec pgvector déjà inclus
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"                    # accessible depuis ta machine (scripts du venv)
+    volumes:
+      - pgdata:/var/lib/postgresql/data   # les données survivent à l'arrêt du conteneur
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 5s
+
   api:
     build: .
     ports:
       - "8000:8000"
     volumes:
       - .:/app
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    depends_on:
+      db:
+        condition: service_healthy     # l'API attend que la base soit prête
+
+volumes:
+  pgdata:
