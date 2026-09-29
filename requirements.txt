@@ -10,3 +10,9 @@ sqlalchemy
 pandas
 numpy
 
+psycopg[binary]	#Pilote pour que SQLAlchemy parle à PostgreSQL
+pymupdf	#Extraction du texte des PDF (étape 4)
+trafilatura	#Extraction du texte des pages HTML (étape 4)
+python-dotenv	#Lire les mots de passe et la clé API depuis un fichier .env
+pytest     #Lancer les tests
+httpx	
