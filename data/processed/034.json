@@ -1,0 +1,47 @@
+{
+  "case_id": "034",
+  "rappelconso": {
+    "produit": "PSG8040/60 PSG8050/30 PSG8130/80 PSG8140/80 PSG8160/30 PSG9030/20 GC9635/20 GC9642/60 GC9650/80 GC9660/30 GC9675/80 GC9682/86",
+    "marque": "Philips",
+    "entreprise": "VERSUNI FRANCE",
+    "numero_fiche": null,
+    "date_publication": "24/12/2024",
+    "gtin": [
+      "8720389001048",
+      "8720389001086",
+      "8710103970262",
+      "8710103970279",
+      "8710103970286",
+      "8710103964278",
+      "8710103861133",
+      "8710103726036",
+      "8710103727361",
+      "8710103829065",
+      "8710103906049",
+      "8710103828075"
+    ],
+    "lots": [
+      "Numéros de série 2421",
+      "2422",
+      "2423"
+    ],
+    "motif_rappel": "Versuni a identifié un problème de fabrication dans la soudure de la chaudière qui génère la vapeur dans le système de vapeur, ce qui peut entraîner des blessures telles que des brûlures",
+    "risques_encourus": "Blessures",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Magasins Fnac Magasins Darty Magasins Boulanger Site C-Discount Site Amazon",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": "Cette mesure a été prise en raison d'un défaut de fabrication identifié au niveau du soudure de la chaudière générant la vapeur dans le circuit de vapeur et pouvant entraîner des blessures telles que des brûlures ou des contusions. Nous avons pris la décision de rappeler ces produits car la sécurité de nos consommateurs est de la plus haute importance pour nous.",
+    "risque": null,
+    "recommandations": null
+  }
+}

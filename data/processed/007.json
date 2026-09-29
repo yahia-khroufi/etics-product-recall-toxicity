@@ -1,0 +1,40 @@
+{
+  "case_id": "007",
+  "rappelconso": {
+    "produit": "Purée de pommes artisanale sans sucres ajoutés Gala bocal verre 500g",
+    "marque": "Filière Qualité Carrefour",
+    "entreprise": "CARREFOUR FRANCE CARREFOUR",
+    "numero_fiche": null,
+    "date_publication": "23/05/2022",
+    "gtin": [
+      "3523680410190"
+    ],
+    "lots": [
+      "PB111034"
+    ],
+    "motif_rappel": "Risque de présence de morceaux de verre",
+    "risques_encourus": "Inertes (verre, métal, plastique, papier, textile…)",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente",
+      "Contacter le service consommateur",
+      "Détruire le produit"
+    ],
+    "distributeurs": "Carrefour",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": "Filière Qualité Carrefour",
+    "gtin": [
+      "3523680410190"
+    ],
+    "lots": [
+      "PB111034"
+    ],
+    "motif": "Suite à la présence éventuelle de morceaux de verre, et par mesure de",
+    "risque": null,
+    "recommandations": null
+  }
+}

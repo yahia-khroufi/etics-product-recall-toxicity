@@ -1,0 +1,34 @@
+{
+  "case_id": "031",
+  "rappelconso": {
+    "produit": "Disque « Julienne » Kenwood pour les modèles de robots culinaires FPM800 et FPM810",
+    "marque": "Kenwood",
+    "entreprise": "DE LONGHI FRANCE De'Longhi France",
+    "numero_fiche": null,
+    "date_publication": "04/10/2022",
+    "gtin": [],
+    "lots": [
+      "Disque « Julienne » pour les modèles de robots culinaires FPM800 et FPM810 Kenwood avec les codes date 19xxx",
+      "20xxx and 21xxx."
+    ],
+    "motif_rappel": "Risque potentiel de sécurité",
+    "risques_encourus": "Blessures Dommages internes",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le service consommateur",
+      "Détruire le produit"
+    ],
+    "distributeurs": "Voir la liste des distributeurs ci-dessous.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": "Ce défaut peut entraîner la rupture de la lame, ce qui présente un risque de lacération ou d'ingestion.",
+    "recommandations": null
+  }
+}

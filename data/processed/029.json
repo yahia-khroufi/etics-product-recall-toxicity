@@ -1,0 +1,39 @@
+{
+  "case_id": "029",
+  "rappelconso": {
+    "produit": "Pâte à tartiner Dulci dubaï Style 40 % pistache 150 g",
+    "marque": "Dulci",
+    "entreprise": "BITECONE SAS Bitecone",
+    "numero_fiche": null,
+    "date_publication": "27/05/2026",
+    "gtin": [
+      "3770025188300"
+    ],
+    "lots": [
+      "Tous les lots"
+    ],
+    "motif_rappel": "Présence potentielle d'ochratoxine A au dessus du seuil réglementaire",
+    "risques_encourus": "Autre risque",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente",
+      "Détruire le produit"
+    ],
+    "distributeurs": "cf fichier pdf",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "Pâte à tartiner Dulci dubaï Style 40 % pistache 150 g",
+    "marque": "Dulci",
+    "gtin": [
+      "3770025188300"
+    ],
+    "lots": [
+      "Tous les lots"
+    ],
+    "motif": "Présence potentielle d'ochratoxine A au-dessus du seuil réglementaire",
+    "risque": "Autre risque",
+    "recommandations": "Ne plus consommer, Rapporter le produit au point de vente, Détruire le produit."
+  }
+}

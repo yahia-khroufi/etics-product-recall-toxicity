@@ -1,0 +1,34 @@
+{
+  "case_id": "038",
+  "rappelconso": {
+    "produit": "BABBOE MINI Mountain BABBOE Pro Bike BABBOE Pro Bike-E BABBOE Pro-Bike Midmotor",
+    "marque": "BABBOE",
+    "entreprise": "CYCLES LAPIERRE Babboe",
+    "numero_fiche": null,
+    "date_publication": "24/06/2024",
+    "gtin": [],
+    "lots": [
+      "Modèles avec un numéro de cadre qui ne commence pas par AC"
+    ],
+    "motif_rappel": "L'utilisation intensive des modèles susmentionnés peut provoquer des microfissures dans le cadre, avec le risque de conduire à une rupture du cadre, et donc à une situation potentiellement dangereuse.",
+    "risques_encourus": "Blessures",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit"
+    ],
+    "distributeurs": "Revendeurs agréés Babboe.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": [
+      "Babboe a identifié des risques de sécurité sur certains modèles de vélos cargo. Nous proposons des solutions pour y remédier. Sur ce site, vous pouvez vérifier si votre modèle de vélo cargo présente un risque de sécurité et découvrir la solution proposée.",
+      "Votre vélo cargo actuel présente un risque pour la sécurité."
+    ],
+    "recommandations": null
+  }
+}

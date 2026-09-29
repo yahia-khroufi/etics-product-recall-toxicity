@@ -1,0 +1,47 @@
+{
+  "case_id": "055",
+  "rappelconso": {
+    "produit": "Britax SMILE III retiré du marché (fabrication : septembre 2019 – mai 2020), SMILE 4 retiré du marché ( fabrication : juillet 2022 – mai 2023), certains SMILE 5Z retirés du marché (fabrication : février 2023 – mars 2024)",
+    "marque": "Britax Römer",
+    "entreprise": "BRITAX PUERICULTURE BRITAX PUERICULTURE SARL",
+    "numero_fiche": null,
+    "date_publication": "23/06/2026",
+    "gtin": [],
+    "lots": [
+      "4000984-204346",
+      "-204377",
+      "-204384",
+      "-204353",
+      "-204391",
+      "-204360",
+      "-204759",
+      "-305395",
+      "-504408",
+      "-208801",
+      "-208825",
+      "-208818",
+      "-708141",
+      "-708158",
+      "-708172",
+      "-708189"
+    ],
+    "motif_rappel": "En raison d'un contact et de frottements potentiels entre l'axe de la roue avant et la platine de déverrouillage rapide, une usure peut survenir au fil du temps, pouvant entraîner le déverrouillage de l'ensemble roue avant.",
+    "risques_encourus": "Blessures",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Environ 90 distributeurs incluant Aubert France, Vertbaudet, Bébé 9, Orchestra, Made4Baby",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": "Chez Britax Römer, la sécurité et la satisfaction de nos clients sont nos priorités absolues. Dans le cadre de notre engagement continu en faveur de la qualité des produits et de la sécurité des consommateurs, nous avons décidé de lancer un rappel volontaire pour les SMILE III fabriquées entre septembre 2019 et mai 2022, les SMILE 4 fabriquées entre juillet 2022 et mai 2023, ainsi que certains modèles de châssis de poussette SMILE 5Z fabriqués entre février 2023 et mars 2024. Cette décision fait suite à l’identification d’un problème de sécurité potentiel. Dans certaines conditions d’utilisation, le mécanisme de verrouillage de la roue avant peut s’user, ce qui peut entraîner une fixation incorrecte de la roue avant au châssis et provoquer une défaillance mécanique/structurelle potentielle de la poussette. Les poussettes SMILE 5Z produites à partir d’avril 2024 ne sont pas concernées par ce défaut potentiel.",
+    "risque": null,
+    "recommandations": null
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "063",
+  "rappelconso": {
+    "produit": "Seul le NEO BT PRO est concerné: NEO BT PRO - réf ARNINEOBTPROV1 EAN: 3700507913434 L'appareil peut également se trouver inclus dans un pack: PACK SAFETY NEO BT PRO Réf ARPACKV2PRO EAN : 3700507913984 Réf ARPACKV3PRO EAN : 3700507915810",
+    "marque": "ARVA",
+    "entreprise": "NIC IMPEX SA Nic Impex",
+    "numero_fiche": null,
+    "date_publication": "20/04/2026",
+    "gtin": [
+      "3700507913434",
+      "3700507913984",
+      "3700507915810"
+    ],
+    "lots": [
+      "Tous les lots"
+    ],
+    "motif_rappel": "Un dysfonctionnement se traduisant par une consommation anormale des piles, pouvant provoquer un redémarrage en boucle du DVA. Dans ce cas, les modes émission et recherche deviennent inactifs.",
+    "risques_encourus": "Blessures Asphyxie",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Voir PDF ci dessous.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": null,
+    "recommandations": null
+  }
+}

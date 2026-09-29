@@ -1,0 +1,40 @@
+{
+  "case_id": "021",
+  "rappelconso": {
+    "produit": "13310",
+    "marque": "MANOIR DES ABEILLES",
+    "entreprise": "LE MANOIR DES ABEILLES",
+    "numero_fiche": null,
+    "date_publication": "12/09/2025",
+    "gtin": [
+      "3335440133108"
+    ],
+    "lots": [
+      "13112025"
+    ],
+    "motif_rappel": "Taux HMF en dehors des spécifications",
+    "risques_encourus": "Autre risque",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Détruire le produit"
+    ],
+    "distributeurs": "voir liste complète",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": [
+      "MIEL DE FLEURS BIO – ORIGINE BULGARIE -",
+      "MIEL DE FLEURS BIO – ORIGINE FRANCE -"
+    ],
+    "marque": "LE MANOIR DES ABEILLES",
+    "gtin": [
+      "3335440133108",
+      "3335440127008"
+    ],
+    "lots": [],
+    "motif": "Un contrôle a mis en évidence la présence de HMF (Hydroxyméthylfurfural) supérieure à la limite règlementaire. Ce composé apparaît naturellement avec le vieillissement du miel, ou sous l’effet prolongé de la chaleur. Cette non-conformité n’entraîne pas de risque immédiat pour la santé, mais altère la qualité du produit.",
+    "risque": "Un contrôle a mis en évidence la présence de HMF (Hydroxyméthylfurfural) supérieure à la limite règlementaire. Ce composé apparaît naturellement avec le vieillissement du miel, ou sous l’effet prolongé de la chaleur. Cette non-conformité n’entraîne pas de risque immédiat pour la santé, mais altère la qualité du produit.",
+    "recommandations": "Nous vous remercions de ne pas consommer ce produit et de le rapporter dans ce magasin où il vous sera remboursé."
+  }
+}

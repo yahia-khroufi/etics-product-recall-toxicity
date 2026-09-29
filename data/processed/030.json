@@ -1,0 +1,42 @@
+{
+  "case_id": "030",
+  "rappelconso": {
+    "produit": "Crémeux aux fleurs lait de vache et Crémeux nature lait de vache",
+    "marque": "ETXALDIA",
+    "entreprise": "ETXALDIA",
+    "numero_fiche": null,
+    "date_publication": "15/06/2026",
+    "gtin": [
+      "3760011652700",
+      "3760011652656"
+    ],
+    "lots": [
+      "117A",
+      "117C"
+    ],
+    "motif_rappel": "Contradiction d’étiquetage",
+    "risques_encourus": "Substances allergisantes non déclarées",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "Carrefour, Leclerc, Intermarché",
+    "zone_geographique": "Départements : BOUCHES-DU-RHONE (13), EURE-ET-LOIR (28), FINISTERE (29), HAUTE-GARONNE (31), GIRONDE (33), HERAULT (34), ILLE-ET-VILAINE (35), LANDES (40), NORD (59), PAS-DE-CALAIS (62), PYRENEES-ATLANTIQUES (64), RHONE (69), HAUTE-SAVOIE (74), TARN (81), ESSONNE (91)"
+  },
+  "communication_entreprise": {
+    "produit": "Crémeux aux fleurs lait de vache et Crémeux nature lait de vache",
+    "marque": "ETXALDIA",
+    "gtin": [
+      "3760011652700",
+      "3760011652656"
+    ],
+    "lots": [
+      "117A",
+      "117C"
+    ],
+    "motif": "Contradiction d’étiquetage",
+    "risque": "Substances allergisantes non déclarées",
+    "recommandations": "Ne plus consommer, Rapporter le produit au point de vente."
+  }
+}

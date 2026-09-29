@@ -1,0 +1,33 @@
+{
+  "case_id": "039",
+  "rappelconso": {
+    "produit": "CARQON Classic CARQON Cruise CARQON Flatbed",
+    "marque": "CARQON",
+    "entreprise": "CYCLES LAPIERRE Carqon",
+    "numero_fiche": null,
+    "date_publication": "12/11/2024",
+    "gtin": [],
+    "lots": [],
+    "motif_rappel": "La sécurité des modèles mentionnés ne peut pas être garantie.",
+    "risques_encourus": "Blessures",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le point de vente"
+    ],
+    "distributeurs": "Revendeurs agréés Carqon.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": [
+      "Ne voulant pas prendre de risques, nous avons décidé d'inspecter tous les vélos cargo Carqon. Nous conseillons aux utilisateurs des modèles de cesser immédiatement d'utiliser le vélo cargo jusqu'à ce que l’entretien soit effectué. L'inspection du vélo cargo Carqon sera effectuée par votre revendeur.",
+      "Carqon a constaté que dans un nombre limité de cas, les vélos cargo Carqon Classic, Cruise et Flatbed ne répondent pas aux exigences élevées de Carqon en matière de qualité et de sécurité pour ses vélos cargo. Carqon prend la sécurité de ses clients très au sérieux et ne veut pas qu'ils courent le moindre risque. C'est pourquoi Carqon lance une action d’entretien volontaire. Sont concernés les modèles Classic, Cruise et Flatbed produits avant mars 2023."
+    ],
+    "recommandations": null
+  }
+}

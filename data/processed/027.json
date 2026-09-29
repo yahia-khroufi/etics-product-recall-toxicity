@@ -1,0 +1,39 @@
+{
+  "case_id": "027",
+  "rappelconso": {
+    "produit": "SALADE RISETTI 250G SALADE RISETTI 500G SALADE RISETTI 2KG",
+    "marque": "ANDRE LOUSSOUARN",
+    "entreprise": "ANDRE LOUSSOUARN SOCIETE ANDRE LOUSSOUARN",
+    "numero_fiche": null,
+    "date_publication": "30/04/2026",
+    "gtin": [
+      "3449480007296",
+      "3449480007302",
+      "3449480006480"
+    ],
+    "lots": [
+      "26134 26154 Date limite de consommation entre le 09/04/2027 et le 23/04/2027",
+      "26135 26162 Date limite de consommation entre le 10/04/2027 et le 28/04/2027",
+      "26124 26134 26145 26154 26161 Date limite de consommation entre le 02/04/2027 et le 27/04/2027"
+    ],
+    "motif_rappel": "ANOMALIE D'ETIQUETAGE - DLC ERRONEE",
+    "risques_encourus": "Anomalie d'étiquetage",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente",
+      "Détruire le produit"
+    ],
+    "distributeurs": "INTERMARCHE - LECLERC - PROXI - NETTO - SUPER U - UTILE - ALD'OUEST - LA PETITE BOUCHERIE - VOTRE MARCHE - VOTRE MARCHE MESLAN - CARREFOUR MARKET - 8 A 8 - MAGASIN VERT",
+    "zone_geographique": "Départements : COTES-D'ARMOR (22), FINISTERE (29), ILLE-ET-VILAINE (35), MORBIHAN (56)"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": "La société ANDRE LOUSSOUARN procède à un retrait et rappel suite à une anomalie d’étiquetage : DLC erronée. Il s’agit des produits suivants vendus au rayon libre-service : SALADE MARAICHERE MARQUE ANDRE LOUSSOUARN",
+    "risque": null,
+    "recommandations": null
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "case_id": "052",
+  "rappelconso": {
+    "produit": "Référence 12768_A, 12768_A1, 0412768_A & 0412768_A1",
+    "marque": "Princess Mimi",
+    "entreprise": "DEPESCHE VERTRIEB Depesche Vertrieb GmbH & Co.KG",
+    "numero_fiche": null,
+    "date_publication": "01/04/2026",
+    "gtin": [
+      "4010070667597"
+    ],
+    "lots": [
+      "Alle Lose"
+    ],
+    "motif_rappel": "Nature du défaut : petite pièce (navette de zip) se détachant lors d’un test de traction Gravité : manquement à la norme NF EN 71-1 et au décret sur la sécurité des jouets Public concerné : enfants < 36 mois (3 ans)",
+    "risques_encourus": "Asphyxie",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente",
+      "Contacter le point de vente"
+    ],
+    "distributeurs": "Center Parc, Auchan, Carrefour, Leclerc, Hyper U, Super U, Intermarché",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "Référence 12768_A, 12768_A1, 0412768_A & 0412768_A1",
+    "marque": "Princess Mimi",
+    "gtin": [
+      "4010070667597"
+    ],
+    "lots": [
+      "Alle Lose"
+    ],
+    "motif": null,
+    "risque": "Asphyxie",
+    "recommandations": "Ne plus uiliser le produit, Rapporter le produit au point de vente, Contacter le point de vente."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "054",
+  "rappelconso": {
+    "produit": "A2502373 - SABLIER DECO - Assortiment de 2 produits",
+    "marque": "WDK GROUPE PARTNER",
+    "entreprise": "WDK GROUPE PARTNER",
+    "numero_fiche": null,
+    "date_publication": "29/05/2026",
+    "gtin": [
+      "3437012523734"
+    ],
+    "lots": [
+      "Tous les lots"
+    ],
+    "motif_rappel": "Présence d'amiante dans le sable décoratif.",
+    "risques_encourus": "Risque chimique",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "Grandes et moyennes surfaces, grandes surfaces spécialisées et magasins spécialisés.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "A2502373 - SABLIER DECO - Assoriment de 2 produits",
+    "marque": "WDK GROUPE PARTNER",
+    "gtin": [
+      "3437012523734"
+    ],
+    "lots": [
+      "Tous les lots"
+    ],
+    "motif": "POURQUOI CE PRODUIT EST-IL DANGEREUX ? • Moif du rappel : Présence d'amiante dans le sable décoraif. • Risques encourus par le consommateur : Risque chimique • Descripion complémentaire du risque : L’ANSES, en lien avec les Centres anipoison, indique qu’au regard des éléments disponibles, il n’y a pas de risque aigu pour la santé des enfants dû à la présence d’amiante dans le sable des jouets.",
+    "risque": "Risque chimique",
+    "recommandations": "Ne plus uiliser le produit, Rapporter le produit au point de vente."
+  }
+}

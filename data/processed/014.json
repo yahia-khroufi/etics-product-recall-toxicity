@@ -1,0 +1,36 @@
+{
+  "case_id": "014",
+  "rappelconso": {
+    "produit": "Vin de France - Blanc Muscat Moelleux 3 Litres",
+    "marque": "M Muscat moelleux",
+    "entreprise": "CAP WINE PROVENCE SAS CAP WINE PROVENCE",
+    "numero_fiche": null,
+    "date_publication": "09/01/2024",
+    "gtin": [
+      "3760125943671"
+    ],
+    "lots": [
+      "L020522C"
+    ],
+    "motif_rappel": "Dépassement du seuil limite sur l'acide sorbique",
+    "risques_encourus": "Additifs et arômes dépassement des seuils de sécurité",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Détruire le produit"
+    ],
+    "distributeurs": "Carrefour Toulon Mayol, Cave Cantarelle Audrey DIEUDONNE, Route 83, Caves Bordron, La cave Cazovins, Vins sur 20, SARL Panoramic, SAS CAP WINE PROVENCE",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": "M Muscat Moelleux Modèle : M Muscat Moelleux Référence : Vin de France – BIB Muscat Blanc Moelleux 3 litres",
+    "gtin": [],
+    "lots": [
+      "concerné : L020522C"
+    ],
+    "motif": null,
+    "risque": null,
+    "recommandations": "L’ensemble des produits décrits ci-dessus ont été retirés de la commercialisation. Cependant, certains de ces produits ont été commercialisés avant la mesure de retrait. Il est donc recommandé aux personnes qui détiendraient ces produits décrits ci-dessus de ne pas les consommer et de contacter le service consommateur au numéro suivant : 04 94 80 96 01"
+  }
+}

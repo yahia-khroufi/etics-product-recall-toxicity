@@ -1,0 +1,40 @@
+{
+  "case_id": "025",
+  "rappelconso": {
+    "produit": "GALLIA CALISMA RELAIS 1er âge 0-6 mois 830g",
+    "marque": "LABORATOIRE GALLIA",
+    "entreprise": "BLEDINA LABORATOIRE GALLIA",
+    "numero_fiche": null,
+    "date_publication": "05/02/2026",
+    "gtin": [
+      "3041091725943"
+    ],
+    "lots": [
+      "tous les lots de cette référence avec cette"
+    ],
+    "motif_rappel": "Par application du principe de précaution, nous procédons au rappel de lots de laits infantiles dont la teneur en céréulide pourrait amener à un dépassement du seuil d'exposition.",
+    "risques_encourus": "Autre risque",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Grande distribution, pharmacie , e-commerce, associations, et réseau de crèches (Métropole et/ou Territoires d'Outre-Mer)",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "CALISMA RELAIS 1er âge 0-6 mois 830g",
+    "marque": "LABORATOIRE GALLIA",
+    "gtin": [
+      "3041091725943"
+    ],
+    "lots": [
+      "111501972"
+    ],
+    "motif": "En raison de nouvelles recommandations d'une autorité européenne concernant la présence potentielle de céréulide, nous procédons, par mesure de précaution, au rappel volontaire d’un lot très limité de CALISMA RELAIS 1er âge",
+    "risque": "Autre risque",
+    "recommandations": "Ne plus consommer, Ne plus utiliser le produit, Rapporter le produit au point de vente, Contacter le service consommateur."
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "043",
+  "rappelconso": {
+    "produit": "HoodieCarrier Gris Flanelle ou Gris Athlétique ou Black Forest - avec ou sans Pack Evolution 0-36+ PhysioCarrier Tout Noir ou Tout gris ou Noir poche Anthracite - avec ou sans Pack Evolution 0-36+",
+    "marque": "Love Radius",
+    "entreprise": "JE PORTE MON BEBE Love Radius / Je Porte Mon Bébé",
+    "numero_fiche": null,
+    "date_publication": "10/12/2021",
+    "gtin": [],
+    "lots": [
+      "HoodieCarrier : 7/23/09/21",
+      "7/24/09/21",
+      "7/24/10/21",
+      "7/25/10/21",
+      "7/25/11/21 PhysioCarrier : 7/39/09/21",
+      "7/40/09/21",
+      "7/40/10/21"
+    ],
+    "motif_rappel": "Le clip de la ceinture ventrale pouvait présenter un défaut entraînant des difficultés pour se fermer entièrement. Cela empêcherait de mettre le produit sur soi préalablement à l'installation du bébé et donc son utilisation en condition normale.",
+    "risques_encourus": "Blessures Dommages internes",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente",
+      "Contacter le point de vente",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Amazon, Naturiou, Ankorstore, Berceau magique, greenweez, bébé au naturel, Natalys, Vertbaudet, Orchestra",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": [
+      "• Le défaut de clip ne concerne pas tous les porte-bébés des lots mentionnés. D’après les 2147 produits que nous avons vérifié, 3,5% avaient un défaut . Néanmoins par sécurité nous publions le rappel pour tous les clients ayant eu un produit de ces lots.",
+      "• Le clip s’attache avant de mettre le bébé dans le porte bébé, l’utilisateur se rend à priori compte d’un défaut de clip avant d’installer bébé. Néanmoins nous faisons ce rappel dans le cas ou l’utilisateur n’aurait pas vu que son clip est mal mis. (Sur tous nos porte-bébés il y a un élastique de sécurité qui retient la ceinture même si le clip n’était pas fermé du tout)."
+    ],
+    "risque": "Bien que peu probable, le risque serait d’utiliser le porte-bébé sans avoir entièrement fermé le clip de la ceinture ventrale et d’entraîner une chute.",
+    "recommandations": "Si votre clip a seulement 1 des 2 mâchoires enclenchée, n’utilisez pas le produit et obtenez-en un de remplacement à nos frais via le formulaire ci-après :"
+  }
+}

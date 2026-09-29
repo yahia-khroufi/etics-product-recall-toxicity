@@ -1,0 +1,36 @@
+{
+  "case_id": "020",
+  "rappelconso": {
+    "produit": "LA MARINADE DE MARCEL SENCHOU PARFAITE AVEC TOUT",
+    "marque": "MARCEL SENCHOU",
+    "entreprise": "EPIKURE DISTRIBUTION",
+    "numero_fiche": null,
+    "date_publication": "03/09/2025",
+    "gtin": [
+      "3278584560303"
+    ],
+    "lots": [
+      "17525"
+    ],
+    "motif_rappel": "Erreur étiquetage: liste ingrédient incorrecte et présence de gluten non déclarée",
+    "risques_encourus": "Substances allergisantes non déclarées",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "LECLERC, AUCHAN, CARREFOUR, INTERMARCHE, NETTO, SYSTEME U",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [
+      "3278584560303"
+    ],
+    "lots": [],
+    "motif": "A la suite d’un problème d’étiquetage sur la marinade de Marcel marque Marcel Senchou, la liste des ingrédients est non conforme au produit emballé et la présence de GLUTEN est non déclarée. EPIKURE DISTRIBUTION lance donc une procédure de retrait rappel pour le numéro de lot mentionné ci-dessous. Il est donc fortement recommandé aux personnes allergiques qui en auraient acheté, et qui en détiendraient encore, de ne pas les consommer et de les ramener à leur point de vente habituel.",
+    "risque": null,
+    "recommandations": "A la suite d’un problème d’étiquetage sur la marinade de Marcel marque Marcel Senchou, la liste des ingrédients est non conforme au produit emballé et la présence de GLUTEN est non déclarée. EPIKURE DISTRIBUTION lance donc une procédure de retrait rappel pour le numéro de lot mentionné ci-dessous. Il est donc fortement recommandé aux personnes allergiques qui en auraient acheté, et qui en détiendraient encore, de ne pas les consommer et de les ramener à leur point de vente habituel."
+  }
+}

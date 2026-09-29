@@ -1,0 +1,41 @@
+{
+  "case_id": "005",
+  "rappelconso": {
+    "produit": "Terrine aux noix de Saint-Jacques Carrefour Le Marché, barquette 140G",
+    "marque": "Carrefour Le Marché",
+    "entreprise": "CARREFOUR FRANCE CARREFOUR",
+    "numero_fiche": null,
+    "date_publication": "20/01/2022",
+    "gtin": [
+      "3523680448483"
+    ],
+    "lots": [
+      "2203101 Date limite de consommation 02/02/2022",
+      "2202501 Date limite de consommation 30/01/2022",
+      "2202201 Date limite de consommation 27/01/2022",
+      "2202101 Date limite de consommation 26/01/2022",
+      "2201501 Date limite de consommation 23/01/2022",
+      "2201401 Date limite de consommation 22/01/2022"
+    ],
+    "motif_rappel": "suspicion de contamination bactériologique",
+    "risques_encourus": "Listeria monocytogenes (agent responsable de la listériose)",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente",
+      "Contacter le service consommateur",
+      "Détruire le produit"
+    ],
+    "distributeurs": "Carrefour",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "Terrine aux noix de Saint-Jacques",
+    "marque": "Carrefour le Marché Produit vendu au rayon poissonnerie libre-service N° d’identification vétérinaire : FR 62.894.102 CE",
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": null,
+    "recommandations": "Il est donc recommandé aux personnes qui détiendraient le produit décrit ci-dessus de ne pas le consommer et de le détruire ou de le rapporter au magasin, où il leur sera remboursé."
+  }
+}

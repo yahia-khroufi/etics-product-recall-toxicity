@@ -1,0 +1,46 @@
+{
+  "case_id": "053",
+  "rappelconso": {
+    "produit": "LEFRANC BOURGEOIS gouache 3013643019152, 3013648075610, 3013648075627,3013648075641, 3013648075658",
+    "marque": "LEFRANC BOURGEOIS ENFANT",
+    "entreprise": "COLART EUROPE COLART EUROPE SAS",
+    "numero_fiche": null,
+    "date_publication": "07/04/2026",
+    "gtin": [
+      "3013643019152",
+      "3013648075610",
+      "3013648075627",
+      "3013648075641",
+      "3013648075658"
+    ],
+    "lots": [
+      "See attached product list"
+    ],
+    "motif_rappel": "NON-CONFORMITÉ À LA NORME EN71-3 - MIGRATION DU PLOMB DANS CERTAINES COULEURS",
+    "risques_encourus": "Risque chimique",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "CONSULTEZ LE FICHIER",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "LEFRANC BOURGEOIS gouache 3013643019152, 3013648075610, 3013648075627,3013648075641, 3013648075658",
+    "marque": "LEFRANC BOURGEOIS ENFANT",
+    "gtin": [
+      "3013643019152",
+      "3013648075610",
+      "3013648075627",
+      "3013648075641",
+      "3013648075658"
+    ],
+    "lots": [
+      "terminant par 36C ou 37C"
+    ],
+    "motif": "NON-CONFORMITÉ À LA NORME EN71-3 - MIGRATION DU PLOMB DANS CERTAINES COULEURS",
+    "risque": "Risque chimique",
+    "recommandations": "Ne plus utiliser le produit, Rapporter le produit au point de vente."
+  }
+}

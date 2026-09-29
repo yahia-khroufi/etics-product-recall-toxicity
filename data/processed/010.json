@@ -1,0 +1,43 @@
+{
+  "case_id": "010",
+  "rappelconso": {
+    "produit": "KETO SLIM MAX ou KETOSLIM MAX",
+    "marque": "BIOCYTE KETO",
+    "entreprise": "BIOCYTE",
+    "numero_fiche": null,
+    "date_publication": "10/10/2022",
+    "gtin": [
+      "3760289221745",
+      "3401560243338"
+    ],
+    "lots": [
+      "20S3-03958",
+      "20S3-04305",
+      "21S3-02677",
+      "22S3-01325"
+    ],
+    "motif_rappel": "Présence de dioxyde de titane TiO2 dans 1 ingrédient",
+    "risques_encourus": "Additifs et arômes non autorisés",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Pharmacies, parapharmacies, GMS",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [
+      "3760289221745"
+    ],
+    "lots": [
+      "(inscrits en bas du pot)."
+    ],
+    "motif": "Suite à la présence de dioxyde de titane TiO2 dans 1 ingrédient, le Laboratoire BIOCYTE procède à un rappel produit.",
+    "risque": null,
+    "recommandations": "Il est demandé aux personnes qui détiendraient un produit concerné par ce rappel de ne pas le consommer et de le rapporter au point de vente."
+  }
+}

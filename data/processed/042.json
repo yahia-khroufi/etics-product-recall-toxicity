@@ -1,0 +1,48 @@
+{
+  "case_id": "042",
+  "rappelconso": {
+    "produit": "RETC6000FR",
+    "marque": "RING",
+    "entreprise": "RING",
+    "numero_fiche": null,
+    "date_publication": "14/08/2025",
+    "gtin": [
+      "5055175245041"
+    ],
+    "lots": [
+      "35/21",
+      "36/21",
+      "09/22",
+      "10/22",
+      "11/22",
+      "12/22",
+      "15/22",
+      "16/22",
+      "24/22",
+      "29/22",
+      "02/23",
+      "03/23",
+      "04/23"
+    ],
+    "motif_rappel": "Risque de surchauffe ou de dysfonctionnement",
+    "risques_encourus": "Incendie",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente",
+      "Contacter le point de vente",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "eu Vert, Carter-Cash, Autobacs, Planet Line, l’auto LECLERC, centres auto ROADY, Carrefour",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": null,
+    "recommandations": null
+  }
+}

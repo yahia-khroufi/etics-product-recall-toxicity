@@ -1,0 +1,41 @@
+{
+  "case_id": "024",
+  "rappelconso": {
+    "produit": "SARDINES HUILE D'OLIVE 125G X12 EL MANAR",
+    "marque": "EL MANAR",
+    "entreprise": "NAUTILUS-FOOD SA",
+    "numero_fiche": null,
+    "date_publication": "21/01/2026",
+    "gtin": [
+      "6194029100323"
+    ],
+    "lots": [
+      "LOT: 337/25"
+    ],
+    "motif_rappel": "Taux d'histamine élevé (supérieur à 200mg/kg) dans une boîte de conserve de sardine - Risque d'intoxication alimentaire",
+    "risques_encourus": "Toxines endogènes : histamine",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente",
+      "Contacter le point de vente",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "LECLERC / GALEC: SOCARA, SCADIF, SCACHAP, SOCAMIL, SCACENTRE, SCARMOR, SCAPALSACE, SCALANDES, SOCAMAINE CARREFOUR",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": "SARDINES HUILE D'OLIVE 125G X12 EL MANAR",
+    "marque": "EL MANAR",
+    "gtin": [
+      "6194029100323"
+    ],
+    "lots": [
+      "LOT: 337/25"
+    ],
+    "motif": "Taux d'histamine élevé (supérieur à 200mg/kg) dans une boîte de conserve de sardine - Risque d'intoxication alimentaire",
+    "risque": "Toxines endogènes : histamine (poissons, fromages, boissons alcoolisées, charcuteries)",
+    "recommandations": "Ne plus consommer, Ne plus utiliser le produit, Rapporter le produit au point de vente, Contacter le point de vente, Contacter le service consommateur."
+  }
+}

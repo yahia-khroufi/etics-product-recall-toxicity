@@ -10,3 +10,6 @@ sqlalchemy
 pandas
 numpy
 
+# Extraction des documents collectés
+PyMuPDF>=1.24.11,<2
+beautifulsoup4>=4.12,<5

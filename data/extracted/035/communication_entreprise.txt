@@ -1,0 +1,165 @@
+Recall
+
+OTHER LANGUAGES
+
+RAPPEL VOLONTAIRE DU NEO BT PRO
+
+Si vous possédez un ARVA NEO BT PRO, cessez immédiatement de l’utiliser et suivez la procédure de retour décrite ci-dessous.
+
+Votre sécurité avant tout
+
+Depuis plus de 40 ans, ARVA conçoit des équipements de sécurité avalanche avec un objectif constant : garantir des performances et une fiabilité maximales. Chaque produit fait l’objet de tests rigoureux pour dépasser les normes de l’industrie.
+
+Récemment, nous avons identifié un problème isolé concernant certains appareils NEO BT PRO. Ce dysfonctionnement peut entraîner une consommation anormale des piles, provoquant dans certains cas un redémarrage et rendant inactifs les modes émission et recherche.
+
+Afin de garantir votre sécurité, nous avons décidé de rappeler volontairement tous les NEO BT PRO pour inspection. Si nécessaire, votre appareil sera réparé ou remplacé gratuitement.
+
+Détails techniques du problème
+
+Le dysfonctionnement est causé par un composant électronique défectueux sur la carte électronique. Après plusieurs mois d’utilisation, ce défaut peut se manifester, bien qu’il n’ait pas été détecté lors de nos contrôles qualité rigoureux effectués sur 100 % des appareils.
+
+Dès que nous avons été alertés par des utilisateurs, nous avons inspecté l’ensemble de notre stock et confirmé que seul le modèle NEO BT PRO est concerné. Tous les autres modèles de la gamme restent parfaitement fonctionnels.
+
+Nous travaillons activement pour résoudre ce problème de manière définitive, renforcer nos processus de production, et garantir une réparation fiable et rapide pour chaque appareil concerné.
+
+Procédure de renvoi
+
+1
+
+REMPLISSEZ LE FORMULAIRE DE RETOUR
+
+Sélectionnez le formulaire correspondant à votre région :
+
+Europe (UE) USA
+
+Reste du monde
+
+Une fois le formulaire soumis, une étiquette de retour sera générée et à imprimer.
+
+Veuillez également télécharger et imprimer ce formulaire et le compléter : Formulaire rappel NEO BT PRO
+
+2
+
+PRÉPAREZ VOTRE APPAREIL
+
+Emballez soigneusement votre NEO BT PRO et insérez le formulaire a l'intérieur du colis.
+
+Renvoyez uniquement l’appareil, sans les piles, sans le holster ni leash ni d’autres accessoires (même si vous avez acheté un safety kit comprenant une pelle et une sonde).
+
+Découpez l'étiquette selon les pointillés et placez-la bien à plat sur le colis. Fixez-la à l'aide d'un ruban adhésif en veillant à ne pas recouvrir les informations et les codes à barres.
+
+3
+
+ENVOI ET TRAITEMENT
+
+Envoyez votre appareil selon les indications présente sur l'étiquette de retour.
+
+Une fois reçu, votre NEO BT PRO sera inspecté, réparé si nécessaire, et testé avant d’être réexpédié.
+
+Vous recevrez un e-mail de confirmation contenant le délai estimé de traitement. Pour l'UE, sous 10 jours ouvrés, hors délais de livraison en moyenne. Pour les USA le délais est de 3 à 4 semaines.
+
+Nos engagements envers vous
+
+Nous sommes pleinement conscients des inconvénients que ce rappel peut causer, en particulier en pleine saison hivernale. Toutefois, la sécurité de nos utilisateurs est notre priorité absolue. Toute l’équipe ARVA est mobilisée pour assurer un traitement rapide et efficace de chaque appareil concerné.
+
+Avec 40 ans d’expérience, nous avons appris à relever les défis avec humilité et détermination. Bien que ce rappel constitue une étape difficile, nous restons convaincus de la fiabilité et du potentiel du NEO BT PRO. Nous souhaitons que vous puissiez rapidement retrouver toute votre confiance dans votre appareil et continuer à vivre les aventures qui vous passionnent.
+
+Merci pour votre compréhension et votre coopération.
+
+L’équipe ARVA
+
+Comprendre le problème
+
+Quel est le problème identifié sur le NEO BT PRO ?
+
+Ce dysfonctionnement se traduit par une consommation anormale des piles, pouvant provoquer un redémarrage en boucle du DVA. Dans ces cas, les modes émission et recherche deviennent inactifs.
+
+Ce problème est causé par un composant électronique défectueux sur la carte. Après plusieurs mois d’utilisation, ce défaut peut se manifester, bien qu’il n’ait pas été détecté lors de nos contrôles qualité sur 100 % des appareils.
+
+Pourquoi ce problème n’a-t-il pas été détecté plus tôt ?
+
+Le dysfonctionnement n’apparaît qu’après plusieurs mois ou saisons d’utilisation. De plus, le nombre d’appareils concernés est extrêmement faible, ce qui a compliqué la détection statistique.
+
+Comment ce problème a-t-il été découvert ?
+
+Ce sont des utilisateurs qui nous ont signalé le problème, permettant à nos équipes d’en identifier la cause.
+
+Un accident est-il survenu à cause de ce défaut ?
+
+À ce jour, aucun accident lié à ce problème n’a été signalé.
+
+Identification des appareils concernés
+
+Comment savoir si mon NEO BT PRO est concerné ?
+
+Par mesure de précaution, tous les NEO BT PRO mis sur le marché depuis leur lancement feront l’objet d’une vérification. Cela concerne les numéros de série NBP00052-1027 à NBP00287-1127 et NB00300-1127 à NB11675-0329.
+
+Attention : Les NEO BT PRO achetés à partir du 10 Février 2025 ne sont pas concernés par le RETOUR VOLONTAIRE.
+
+Où trouver le numéro de série de mon DVA ?
+
+Le numéro de série se trouve :
+
+● Sous le code-barres dans la trappe à piles (ex. : NB01234-1234 ou NBP01234-1234).
+
+● Dans l’application ARVA, rubrique « Informations produit ».
+
+De combien de cas client avez-vous connaissance ?
+
+Au 20/01/2025, ce problème a été signalé sur 0,4 % des NEO BT PRO vendus dans le monde.
+
+Procédure de rappel
+
+Que dois-je faire pour renvoyer mon produit ?
+
+Remplissez le formulaire de retour en ligne. Le formulaire dépend de votre région géographique et vous fournira les informations nécessaires pour le retour.
+
+Où dois-je envoyer mon DVA pour inspection ou remplacement ?
+
+L’adresse exacte vous sera communiquée lors de la création de l’étiquette de retour en ligne.
+
+Puis-je inspecter mon appareil moi-même ?
+
+Non. Seules nos équipes techniques peuvent inspecter, réparer ou remplacer votre appareil si nécessaire.
+
+Dois-je renvoyer les piles avec mon DVA ?
+
+Non, conservez vos piles. Pour des raisons de process industriel nous ne pourrons pas vous renvoyer vos piles si vous les oubliez dans le DVA.
+
+Dois-je renvoyer le holster avec mon DVA ?
+
+Non, ne renvoyez que le DVA. Gardez le holster et tout autre accessoire avec vous, notamment le leash.
+
+Réparation et retour
+
+Comment la révision sera-t-elle effectuée ?
+
+Votre appareil sera envoyé dans notre usine en France, où il sera analysé, réparé ou échangé si nécessaire. Chaque appareil sera minutieusement contrôlé avant de vous être renvoyé.
+
+En combien de temps vais-je récupérer mon appareil ?
+
+Le traitement de votre DVA prendra environ 10 jours après réception dans nos locaux. Pour les USA, il faut compter entre 3 et 4 semaines.
+
+Quel est le coût pour l’utilisateur ?
+
+La procédure de rappel est entièrement gratuite et prise en charge par ARVA.
+
+Erreur lors de la génération de l'étiquette de retour.
+
+En cas de message d'erreur, cela peut être dû à plusieurs raisons. Le numéro de téléphone peut ne pas être au bon format, l'adresse renseignée peut être incomplète, des caractères spéciaux non autorisés peuvent avoir été utilisés, ou encore la région indiquée peut ne pas être prise en charge.
+
+Questions spécifiques
+
+Puis-je continuer à utiliser mon NEO BT PRO s’il fonctionne correctement ?
+
+Non, nous vous demandons de cesser immédiatement de l’utiliser et de suivre la procédure de retour pour garantir votre sécurité.
+
+ARVA continuera-t-il à vendre le modèle NEO BT PRO ?
+
+Oui, après résolution complète de ce problème, le NEO BT PRO continuera à être disponible. Il reste une référence pour ses performances et sa fiabilité.
+
+Comment ARVA va-t-il prévenir de nouveaux cas similaires ?
+
+Nous avons renforcé nos processus de contrôle des composants dès leur réception et optimisé notre chaîne de production dans une démarche d’amélioration continue.
+
+OTHER LANGUAGES

@@ -1,0 +1,37 @@
+{
+  "case_id": "016",
+  "rappelconso": {
+    "produit": "Boite de 6 oeufs",
+    "marque": "La New Ferme Cocotte",
+    "entreprise": "TELLIER GERARD La New Ferme Cocotte",
+    "numero_fiche": null,
+    "date_publication": "29/08/2024",
+    "gtin": [
+      "3770007836007"
+    ],
+    "lots": [
+      "1FRSAV04 Date limite de consommation entre le 04/08/2024 et le 14/09/2024"
+    ],
+    "motif_rappel": "LA NEW FERME COCOTTE procède aujourd’hui au retrait de la vente d’oeufs suite à la suspicion de la présence de Salmonella enteritidis.",
+    "risques_encourus": "Salmonella spp (agent responsable de la salmonellose)",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "Cocci Market Blonville-Sur-Mer - Cocci Market Villers-Sur-Mer - Super U Dives-Sur-Mer/Troarn - Boucherie Charcuterie Chesnel Cabourg - Chez Madeleine Deauville - Carrefour Market Trouville - Intermarché Lisieux - Carrefour City Houlgate",
+    "zone_geographique": "Départements : CALVADOS (14)"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": "La New Ferme Cocotte",
+    "gtin": [
+      "3770007836007"
+    ],
+    "lots": [],
+    "motif": "LA NEW FERME COCOTTE procède aujourd’hui au retrait de la vente d’oeufs suite à la suspicion de la présence de Salmonella enteritidis.",
+    "risque": null,
+    "recommandations": null
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "case_id": "059",
+  "rappelconso": {
+    "produit": "Bidon 1.98L",
+    "marque": "CARREFOUR EXPERT",
+    "entreprise": "CARREFOUR FRANCE CARREFOUR",
+    "numero_fiche": null,
+    "date_publication": "03/02/2026",
+    "gtin": [
+      "3560071562397"
+    ],
+    "lots": [
+      "LOT 92528150"
+    ],
+    "motif_rappel": "Suite à un problème de fabrication du lot, le pH du produit est trop élevé. Il y a alors un risque de graves brûlures de la peau en cas de contact direct avec le produit non dilué.",
+    "risques_encourus": "Brûlures",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "Carrefour",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [
+      "3560071562397"
+    ],
+    "lots": [
+      "92528150"
+    ],
+    "motif": "Suite à un problème de fabrication du lot, le pH du produit est trop élevé. Il y a alors un risque de graves brûlures de la peau en cas de contact direct avec le produit non dilué.",
+    "risque": "Suite à un problème de fabrication du lot, le pH du produit est trop élevé. Il y a alors un risque de graves brûlures de la peau en cas de contact direct avec le produit non dilué.",
+    "recommandations": "Ne plus utiliser le produit LE RAPPORTER dans le magasin Carrefour"
+  }
+}

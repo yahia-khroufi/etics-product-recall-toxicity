@@ -1,0 +1,62 @@
+{
+  "case_id": "032",
+  "rappelconso": {
+    "produit": "XC2011 XC3031 XC3032 XC3033",
+    "marque": "Philips",
+    "entreprise": "VERSUNI FRANCE",
+    "numero_fiche": null,
+    "date_publication": "03/10/2024",
+    "gtin": [
+      "8720389045004",
+      "8720389031182",
+      "8720389038372",
+      "8720389030406",
+      "8720389049071",
+      "8720389029820",
+      "8720389048999",
+      "8720389038389",
+      "8720389049002",
+      "8720389029837",
+      "8720389049019",
+      "8720389031236",
+      "8720389049026",
+      "8720389029844",
+      "8720389038396",
+      "8720389049033",
+      "8720389049040",
+      "8720389029851",
+      "8720389038426",
+      "8720389049057",
+      "8720389050169",
+      "8720389029868",
+      "8720389038402",
+      "8720389049064",
+      "8720389038419",
+      "8720389031366"
+    ],
+    "lots": [
+      "le numéro de série (YYWW) doit est compris entre 2328 et 2423"
+    ],
+    "motif_rappel": "Vulnérabilité au niveau de la batterie du produit.",
+    "risques_encourus": "Incendie",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "PULSAT MDA DEMARQU",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": [
+      "Vais-je recevoir une confirmation ou des informations de suivi suite à l'enregistrement ?",
+      "Vous recevrez des informations de suivi par e-mail suite à l'enregistrement."
+    ],
+    "risque": "Bien que le risque encouru par les utilisateurs soit faible, nous vous demandons de suivre les consignes ci-dessous :",
+    "recommandations": null
+  }
+}

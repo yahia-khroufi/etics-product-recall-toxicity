@@ -1,0 +1,44 @@
+{
+  "case_id": "001",
+  "rappelconso": {
+    "produit": "Sigdal Herbes & Sel de Mer 190g",
+    "marque": "Sigdal",
+    "entreprise": "ASSENTUS FOOD Sigdal",
+    "numero_fiche": null,
+    "date_publication": "07/01/2022",
+    "gtin": [
+      "7071848023851"
+    ],
+    "lots": [
+      "15/01/22",
+      "16/01/22",
+      "29/04/22",
+      "09/06/22",
+      "27/05/22",
+      "12/07/22",
+      "13/07/22"
+    ],
+    "motif_rappel": "Présence d'oxyde d'éthylène dans la matière première \"mélange d'herbes\"",
+    "risques_encourus": "Autres contaminants chimiques",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus consommer",
+      "Rapporter le produit au point de vente",
+      "Contacter le service consommateur",
+      "Détruire le produit"
+    ],
+    "distributeurs": "Monoprix, Franprix, Carrefour, Auchan, Métro, Intermarché, Système U, Leclerc, Boutique en Ligne, Salons professionnels.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": "Sigdal",
+    "gtin": [
+      "7071848023851"
+    ],
+    "lots": [],
+    "motif": "La société Assentus Food procède aujourd'hui au retrait de la vente des produits suivants suite à la détection d'oxyde d'éthylène (ETO) dans une des matières premières.",
+    "risque": null,
+    "recommandations": "Si vous avez acheté un produit portant l une de ces dates, il vous est demandé de ne plus le consommer, et de nous contacter pour échange ou remboursement."
+  }
+}

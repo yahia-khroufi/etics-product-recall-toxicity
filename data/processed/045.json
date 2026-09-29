@@ -1,0 +1,33 @@
+{
+  "case_id": "045",
+  "rappelconso": {
+    "produit": "Réf I871065 Régulation Réf I800443 Climatisé",
+    "marque": "TEX BABY",
+    "entreprise": "CARREFOUR FRANCE CARREFOUR",
+    "numero_fiche": null,
+    "date_publication": "03/10/2023",
+    "gtin": [
+      "3616473151476",
+      "3614614931390"
+    ],
+    "lots": [],
+    "motif_rappel": "Un manque de fermeté du matelas a été détecté pouvant entraîner un risque de suffocation lorsque le nourrisson est sur le ventre.",
+    "risques_encourus": "Arrêt respiratoire",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Rapporter le produit au point de vente"
+    ],
+    "distributeurs": "Carrefour",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": "Un manque de fermeté du matelas a été détecté pouvant entraîner un risque de suffocation lorsque le nourrisson est sur le ventre.",
+    "recommandations": "Les clients ayant acheté ces produits sont priés de ne plus les utiliser et de LES RAPPORTER dans leur magasin Carrefour pour remboursement."
+  }
+}

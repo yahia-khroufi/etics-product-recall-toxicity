@@ -1,0 +1,32 @@
+{
+  "case_id": "062",
+  "rappelconso": {
+    "produit": "C4 ST (Edition MR)",
+    "marque": "Cowboy",
+    "entreprise": "AVANIS Alltricks",
+    "numero_fiche": null,
+    "date_publication": "11/07/2025",
+    "gtin": [],
+    "lots": [
+      "Cowboy C4 ST"
+    ],
+    "motif_rappel": "Risque d'apparition de fissures au niveau de la jonction entre le tube de direction et le tube diagonal après environ 2 500 km d'utilisation",
+    "risques_encourus": "Blessures",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Ne plus utiliser le produit",
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Revendeurs Cowboy dont Alltricks",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": "Selon nos données, ces fissures peuvent apparaître après environ 2 500 km d'utilisation. Dans certains cas, cela pourrait entraîner une rupture du cadre, avec un risque de chute.",
+    "recommandations": null
+  }
+}

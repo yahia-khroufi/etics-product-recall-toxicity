@@ -1,0 +1,46 @@
+{
+  "case_id": "064",
+  "rappelconso": {
+    "produit": "Piscines rondes tubulaires d'une hauteur supérieure à 1,22 mètre.",
+    "marque": "INTEX",
+    "entreprise": "UNITEX SERVICE (FRANCE) INTEX TRADING B.V.",
+    "numero_fiche": null,
+    "date_publication": "13/05/2026",
+    "gtin": [
+      "6941057408576",
+      "6941057415147",
+      "6941057414393",
+      "6941057418537",
+      "6941057420844",
+      "6941057423272",
+      "6941057414416",
+      "6941057418551",
+      "6941057414430",
+      "6941057415123",
+      "6941057413778",
+      "6941057414508",
+      "6941057413792",
+      "6941057414522"
+    ],
+    "lots": [
+      "Tous les lots"
+    ],
+    "motif_rappel": "Retrait de la sangle de compression pouvant servir de point d'appui.",
+    "risques_encourus": "Noyade",
+    "preconisations_sanitaires": null,
+    "conduites_a_tenir": [
+      "Contacter le service consommateur"
+    ],
+    "distributeurs": "Tous les distributeurs commercialisant les produits identifiés.",
+    "zone_geographique": "France entière"
+  },
+  "communication_entreprise": {
+    "produit": null,
+    "marque": null,
+    "gtin": [],
+    "lots": [],
+    "motif": null,
+    "risque": null,
+    "recommandations": null
+  }
+}
