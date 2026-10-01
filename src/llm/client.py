@@ -25,12 +25,15 @@ class OpenAIQuestionnaireClient:
         from openai import OpenAI
 
         self.model_name = model_name or os.getenv("OPENAI_MODEL", "gpt-4o")
-        self._client = OpenAI()
-
+        self._client = OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY"),
+            base_url=os.getenv("OPENROUTER_BASE_URL"),
+        )
     def analyze(self, rappelconso_text: str, communication_text: str) -> QuestionnaireAnswers:
         completion = self._client.chat.completions.parse(
             model=self.model_name,
             temperature=0,
+            max_tokens=1500,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {

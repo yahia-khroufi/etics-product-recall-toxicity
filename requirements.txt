@@ -13,3 +13,4 @@ numpy
 
 PyMuPDF>=1.24,<2
 beautifulsoup4>=4.12,<5
+pytest

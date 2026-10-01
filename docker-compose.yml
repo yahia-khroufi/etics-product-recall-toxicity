@@ -6,7 +6,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-etics}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-etics123}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
