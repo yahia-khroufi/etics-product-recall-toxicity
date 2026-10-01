@@ -5,8 +5,10 @@ __pycache__/
 
 *.py[cod]
 
-data/raw/
-data/extracted/
-data/processed/
+data/raw/*
+data/extracted/*
+data/processed/*
+
+
 
 docs/
