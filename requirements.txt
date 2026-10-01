@@ -1,15 +1,15 @@
 # API et validation
 fastapi
 uvicorn[standard]
-pydantic
+pydantic>=2.7,<3
 
-# Données et persistance
-sqlalchemy
+sqlalchemy>=2.0,<3
+psycopg2-binary>=2.9,<3
+python-dotenv>=1.0,<2
+openai>=1.50,<3
 
-# Traitement et évaluation
 pandas
 numpy
 
-# Extraction des documents collectés
-PyMuPDF>=1.24.11,<2
+PyMuPDF>=1.24,<2
 beautifulsoup4>=4.12,<5

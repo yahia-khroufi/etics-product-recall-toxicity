@@ -1,4 +1,14 @@
-# Environnement local et caches Python
 .venv/
+.env
+
 __pycache__/
+
 *.py[cod]
+
+data/raw/
+
+data/extracted/
+
+data/processed/
+
+docs/

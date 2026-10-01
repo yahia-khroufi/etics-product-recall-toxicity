@@ -58,3 +58,4 @@ def write_output(path: Path, content: str, root: Path, overwrite: bool = False) 
         if temp_path is not None and temp_path.exists():
             temp_path.unlink()
     return True
+

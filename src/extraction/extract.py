@@ -51,27 +51,3 @@ def extract_case(case_id: str, folder: Path, overwrite: bool = False) -> int:
     return errors
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(description="Extraction locale PDF/HTML vers data/extracted.")
-    parser.add_argument("--case", action="append", help="Identifiant ou nom de dossier ; option répétable.")
-    parser.add_argument("--overwrite", action="store_true", help="Régénérer les TXT existants.")
-    args = parser.parse_args()
-    logging.basicConfig(level=logging.INFO, format="%(levelname)s : %(message)s")
-    try:
-        cases = case_folders(RAW_DIR, args.case)
-    except (OSError, ValueError) as error:
-        LOGGER.error("%s", error)
-        return 1
-    errors = 0
-    for case_id, folder in cases:
-        try:
-            errors += extract_case(case_id, folder, args.overwrite)
-        except (OSError, ValueError) as error:
-            errors += 1
-            LOGGER.error("%s", error)
-    LOGGER.info("Extraction terminée : %s dossier(s), %s erreur(s).", len(cases), errors)
-    return 1 if errors else 0
-
-
-if __name__ == "__main__":
-    raise SystemExit(main())
