@@ -1,5 +1,7 @@
 import json
 from pathlib import Path
+import pytest
+import src.llm.analyze as analysis
 
 from sqlalchemy import create_engine, func, select
 from sqlalchemy.orm import sessionmaker
@@ -10,7 +12,12 @@ from src.database.repository import save_recall
 from src.llm.analyze import analyze_case
 from src.llm.schemas import QuestionAnswer, QuestionnaireAnswers
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parent / "fixtures"
+
+
+@pytest.fixture(autouse=True)
+def local_fixture_sources(monkeypatch):
+    monkeypatch.setattr(analysis,"EXTRACTED_DIR",PROJECT_ROOT / "data/extracted")
 
 
 class FakeQuestionnaireClient:
@@ -122,6 +129,7 @@ def test_analyze_case_scores_and_links_result():
 
     assert result.recall_id == recall.id
     assert result.score == 1.0
+    assert result.toxicity_score == 0.0
     assert result.verdict == "non_toxique"
     assert result.transparency_class == "claire"
     assert result.evidence_verified is True

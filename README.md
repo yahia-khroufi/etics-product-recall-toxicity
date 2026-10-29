@@ -2,6 +2,26 @@
 
 Projet d’analyse de rappels de produits présentant un risque de toxicité.
 
+Le volet historique PostgreSQL est décrit dans [DWH.md](DWH.md) : migrations SQL,
+versions documentaires observées, traçabilité des exécutions et entrepôt `dwh`.
+La toxicité évaluée est informationnelle : elle concerne la communication du rappel.
+
+```powershell
+python -m src.database.migrate
+python -m src.pipeline --from-processed
+python -m src.dwh.etl
+```
+
+Ces commandes ne font pas d'appel LLM. L'ETL réutilise `llm_results` et ne reconstruit
+aucune version ancienne des communications. Voir les limites de provenance dans `DWH.md`.
+
+Pour une base existante, la reprise vérifiée avec sauvegarde et comparaison de
+l'historique se lance sans actualiser les rappels :
+
+```powershell
+python -m src.database.upgrade --backup-dir backups
+```
+
 ## Objectif
 
 Le projet permet de :
@@ -88,6 +108,28 @@ Recall 1 ─────< plusieurs LLMResult
 ```powershell
 docker compose up -d
 ```
+
+## Consulter le dashboard
+
+Depuis la racine du projet, avec PostgreSQL demarre et les migrations DWH appliquees :
+
+```powershell
+.venv\Scripts\python.exe -m pip install -r requirements.txt
+.venv\Scripts\python.exe -m streamlit run dashboard/app.py
+```
+
+Ouvrir http://127.0.0.1:8501. Le script `Lancer_dashboard.ps1` permet aussi de le
+lancer ; il demarre aussi le traitement automatique en arriere-plan.
+L'interface Streamlit consulte PostgreSQL en lecture seule : synthese,
+rappels, citations a revoir, historique LLM et tracabilite. Voir [DASHBOARD.md](DASHBOARD.md)
+pour les filtres, limites et verifications. La consultation ne declenche pas d'appel LLM.
+Le formulaire **Nouveau rappel** accepte les deux documents et confie leur traitement
+au worker : extraction, analyse, verification des citations, scoring et ETL.
+Voir [AUTOMATISATION.md](AUTOMATISATION.md) pour le suivi, les doublons et les reprises.
+
+Le client LLM utilise une seule API : `OPENAI_API_KEY`, `OPENAI_MODEL` et
+`OPENROUTER_BASE_URL`. Les anciennes variables de secours `LLM_API_2_*` et
+`LLM_API_3_*` sont ignorées, même si elles sont encore présentes dans `.env`.
 
 ## Exécuter un cas
 

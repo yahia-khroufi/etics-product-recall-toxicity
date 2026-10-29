@@ -37,6 +37,7 @@ class CommunicationEntrepriseData(StrictSchema):
 
 class RecallData(StrictSchema):
     case_id: str = Field(min_length=1, max_length=100)
+    organization_key: str | None = Field(default=None, max_length=200)
     rappelconso: RappelConsoData
     communication_entreprise: CommunicationEntrepriseData
 
@@ -60,10 +61,14 @@ class LLMResultCreate(StrictSchema):
     q7: bool
     evidence: dict[str, list[str]]
     evidence_verified: bool
-    score: float = Field(ge=0.0, le=1.0)
-    severity: int = Field(ge=0, le=3)
-    transparency_class: Literal["claire", "ambigue", "incomplete", "minimisation_potentielle"]
-    verdict: Literal["toxique", "non_toxique"]
-    explanation: str
+    run_id: int | None = None
+    official_version_id: int | None = None
+    company_version_id: int | None = None
+    # Existing callers may still supply the legacy derived fields.
+    score: float | None = Field(default=None, ge=0.0, le=1.0)
+    severity: int | None = Field(default=None, ge=0, le=3)
+    transparency_class: Literal["claire", "ambigue", "incomplete", "minimisation_potentielle"] | None = None
+    verdict: Literal["toxique", "non_toxique"] | None = None
+    explanation: str | None = None
     model_name: str
     prompt_version: str = "questionnaire_v3"

@@ -2,44 +2,54 @@ import argparse
 import json
 import logging
 
-from src.database.db import init_db
+from src.database.db import init_db, SessionLocal
 from src.database.repository import save_recall
+from src.database.capture import capture_case
 from src.extraction.extract import extract_case
 from src.llm.analyze import analyze_case
+from src.llm.client import APIUnavailableError, APIRequestError, OpenAIQuestionnaireClient
 from src.pipeline_io import EXTRACTED_DIR, PROCESSED_DIR, RAW_DIR, case_folders
 from src.preprocessing.preprocess import preprocess_case
 
 LOGGER = logging.getLogger(__name__)
 
 
-def run_base_path(case_id: str):
+def run_base_path(case_id: str, session_factory=SessionLocal):
     path = PROCESSED_DIR / f"{case_id}.json"
     if not path.is_file():
         raise FileNotFoundError(f"Données traitées introuvables : {path}")
-    return save_recall(json.loads(path.read_text(encoding="utf-8")))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data.get("case_id") != case_id:
+        raise ValueError("L'identifiant du JSON doit correspondre au dossier demandé.")
+    recall = save_recall(data, session_factory)
+    if (EXTRACTED_DIR / case_id).is_dir():
+        capture_case(case_id, session_factory)
+    return recall
 
 
-def run_llm_path(case_id: str):
-    """Chemin LLM : textes -> Q1-Q7 -> score/verdict -> PostgreSQL."""
-    return analyze_case(case_id)
+def run_llm_path(case_id: str, client=None, session_factory=SessionLocal):
+    """Textes -> Q1-Q7/evidence -> PostgreSQL -> score (%) -> mise à jour."""
+    return analyze_case(case_id, client=client, session_factory=session_factory)
 
 
-def run_pipeline(case_id: str, overwrite: bool = False, with_llm: bool = False) -> None:
+def run_pipeline(case_id: str, overwrite: bool = False, with_llm: bool = False, client=None,
+                 session_factory=SessionLocal) -> None:
 
     case_id, raw_folder = case_folders(RAW_DIR, [case_id])[0]
     if extract_case(case_id, raw_folder, overwrite):
         raise RuntimeError(f"{case_id} : extraction en erreur, suite du pipeline interrompue.")
 
     preprocess_case(case_id, EXTRACTED_DIR / case_id, overwrite)
-    run_base_path(case_id)
+    run_base_path(case_id, session_factory)
     if with_llm:
-        run_llm_path(case_id)
+        run_llm_path(case_id, client, session_factory)
 
 
-def run_from_processed(case_id: str, with_llm: bool = False) -> None:
-    run_base_path(case_id)
+def run_from_processed(case_id: str, with_llm: bool = False, client=None,
+                       session_factory=SessionLocal) -> None:
+    run_base_path(case_id, session_factory)
     if with_llm:
-        run_llm_path(case_id)
+        run_llm_path(case_id, client, session_factory)
 
 
 def processed_case_ids(selected: list[str] | None = None) -> list[str]:
@@ -85,21 +95,28 @@ def main() -> int:
             else [case_id for case_id, _ in case_folders(RAW_DIR, args.case)]
         )
         init_db()
+        llm_client = OpenAIQuestionnaireClient() if args.with_llm and case_ids else None
     except Exception as error:
         LOGGER.error("Préparation du pipeline impossible : %s", error)
         return 1
 
     errors = 0
+    attempted = 0
     for case_id in case_ids:
+        attempted += 1
         try:
             if args.from_processed:
-                run_from_processed(case_id, args.with_llm)
+                run_from_processed(case_id, args.with_llm, llm_client)
             else:
-                run_pipeline(case_id, args.overwrite, args.with_llm)
+                run_pipeline(case_id, args.overwrite, args.with_llm, llm_client)
+        except (APIUnavailableError, APIRequestError) as error:
+            errors += 1
+            LOGGER.error("%s : %s. Lot interrompu ; les autres cas restent en attente.", case_id, error)
+            break
         except Exception as error:
             errors += 1
             LOGGER.error("%s : %s", case_id, error)
-    LOGGER.info("Pipeline terminé : %s dossier(s), %s erreur(s).", len(case_ids), errors)
+    LOGGER.info("Pipeline terminé : %s dossier(s) tenté(s) sur %s, %s erreur(s).", attempted, len(case_ids), errors)
     return 1 if errors else 0
 
 

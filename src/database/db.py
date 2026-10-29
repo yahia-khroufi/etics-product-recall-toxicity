@@ -11,7 +11,7 @@ load_dotenv(PROJECT_ROOT / ".env")
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql+psycopg2://etics:etics123@localhost:5432/etics_db",
+    "postgresql+psycopg2://etics:etics123@localhost:5433/etics_db",
 )
 
 
@@ -25,6 +25,9 @@ SessionLocal = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False
 def init_db() -> None:
     from src.database import models  
     Base.metadata.create_all(bind=engine)
+    if engine.dialect.name == "postgresql":
+        from src.database.migrate import migrate
+        migrate(engine)
 
 
 

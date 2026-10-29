@@ -1,3 +1,23 @@
+x-app: &app
+  build: .
+  image: etics-app:local
+  pull_policy: build
+  init: true
+  env_file:
+    - path: .env
+      required: false
+  environment: &app-environment
+    ETICS_CONTAINER: "1"
+    POSTGRES_HOST: db
+    POSTGRES_PORT: "5432"
+    POSTGRES_DB: ${POSTGRES_DB:-etics_db}
+    POSTGRES_USER: ${POSTGRES_USER:-etics}
+    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-etics123}
+  volumes:
+    - ./data:/app/data
+    - ./backups:/app/backups
+    - ./runtime:/app/runtime
+
 services:
   db:
     image: postgres:16-alpine
@@ -6,7 +26,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-etics}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-etics123}
     ports:
-      - "5433:5432"
+      - "127.0.0.1:5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -14,6 +34,51 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    restart: unless-stopped
+
+  initialize:
+    <<: *app
+    command: ["initialize"]
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  dashboard:
+    <<: *app
+    command: ["dashboard"]
+    ports:
+      - "127.0.0.1:8501:8501"
+    depends_on:
+      db:
+        condition: service_healthy
+      initialize:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-m", "src.container", "health-dashboard"]
+      interval: 10s
+      timeout: 8s
+      start_period: 20s
+      retries: 5
+    restart: unless-stopped
+
+  worker:
+    <<: *app
+    command: ["worker"]
+    depends_on:
+      db:
+        condition: service_healthy
+      initialize:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-m", "src.container", "health-worker"]
+      interval: 10s
+      timeout: 8s
+      start_period: 20s
+      retries: 5
+    stop_signal: SIGINT
+    stop_grace_period: 60s
+    restart: unless-stopped
 
 volumes:
   postgres_data:
