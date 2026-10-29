@@ -1,0 +1,13 @@
+# Fichier local non suivi. Ne jamais y saisir de clé API ni de mot de passe.
+subscription_id = "00000000-0000-0000-0000-000000000000"
+# Vide : Terraform cree le coffre et calcule les references des secrets.
+# Leurs valeurs restent a renseigner dans Key Vault apres la fondation.
+key_vault_id = ""
+postgres_password_secret_id = ""
+llm_api_key_secret_id = ""
+dashboard_source_cidr = "203.0.113.10/32" # Remplacer par votre IPv4 publique.
+location = "francecentral"
+app_image = "" # Après publication autorisée : ACR.azurecr.io/etics@sha256:DIGEST
+application_enabled = false
+database_initialized = false
+# postgres_admin_password : variable d'environnement TF_VAR_postgres_admin_password uniquement.

@@ -8,9 +8,11 @@ ETICS rapproche une fiche officielle RappelConso de la communication publiée pa
 
 ![Vue d'ensemble du dashboard ETICS : compteurs, états des analyses et distribution de l'indice](assets/screenshots/01-vue-ensemble.jpg)
 
-**Python 3.12 · PostgreSQL 16 · SQLAlchemy · Streamlit · Docker Compose · API LLM unique**
+**Python 3.12 · PostgreSQL 16 · SQLAlchemy · Streamlit · Docker Compose · API LLM unique · Azure Container Apps · Terraform · GitHub Actions**
 
-[Démarrage](#démarrage-rapide-avec-docker) · [Utilisation](#utilisation) · [Architecture](#architecture) · [Captures du dashboard](#captures-du-dashboard) · [Tests](#tests-et-vérifications) · [Documentation](#documentation)
+[Démarrage](#démarrage-rapide-avec-docker) · [Utilisation](#utilisation) · [Architecture](#architecture) · [Azure](#déploiement-sur-azure-container-apps) · [CI](#intégration-continue-et-infrastructure) · [Captures du dashboard](#captures-du-dashboard) · [Tests](#tests-et-vérifications) · [Documentation](#documentation)
+
+> **État au 29 octobre 2026 :** le parcours local Docker a été vérifié. La configuration Azure Container Apps et les workflows GitHub Actions sont préparés et validés localement ; aucun push GitHub/ACR ni déploiement Azure n'a été effectué. Les captures ci-dessous montrent le dashboard local.
 
 ## Fonctionnalités
 
@@ -24,6 +26,8 @@ ETICS rapproche une fiche officielle RappelConso de la communication publiée pa
 | Alimentation | ETL transactionnel, reproductible et idempotent à partir de `llm_results` |
 | Dashboard | Synthèse, filtres, détail des rappels, citations, historique, traçabilité et export CSV |
 | Automatisation | Formulaire de dépôt, file persistante, contrôle des doublons et reprises sur erreur |
+| Infrastructure Azure | Deux Container Apps, PostgreSQL privé, stockage Azure Files, registre ACR et secrets Key Vault |
+| Validation et déploiement | CI Docker/PostgreSQL, tests Terraform simulés et workflow manuel d'infrastructure avec OIDC |
 
 ## Démarrage rapide avec Docker
 
@@ -130,6 +134,8 @@ Le client utilise **une seule API**. Les anciennes variables `LLM_API_2_*` et `L
 
 Les reprises automatiques du SDK sont désactivées. En cas d'indisponibilité, le worker applique une reprise différée sur la même API, au maximum trois tentatives par traitement. Consulter [AUTOMATISATION.md](AUTOMATISATION.md) pour les pauses et les reprises explicites.
 
+Sur Azure, le worker reçoit la clé LLM depuis une référence Key Vault. Les fichiers `.env`, le corpus local et les fichiers d'état Terraform ne doivent pas être envoyés dans l'image ; le guide cloud décrit la préparation d'un contexte de construction dédié.
+
 ## Architecture
 
 ```mermaid
@@ -181,6 +187,60 @@ La table `dwh.fact_analysis` conserve **un fait par résultat LLM**. Elle est re
 
 Les requêtes de [src/dwh/queries.sql](src/dwh/queries.sql) permettent l'analyse par entreprise, produit, période et protocole, ainsi que l'examen des changements documentaires réellement observés. Voir [DWH.md](DWH.md).
 
+## Déploiement sur Azure Container Apps
+
+La cible cloud utilise **Azure Container Apps**, avec deux applications distinctes pour le dashboard et le worker. Elle conserve les modules Python, le Dockerfile et les migrations existants. Docker Compose reste le mode d'exécution local.
+
+```mermaid
+flowchart LR
+    U[Utilisateur : IPv4 autorisée] -->|HTTPS| D[Container App : dashboard Streamlit]
+    D --> P[(PostgreSQL 16 privé : public et dwh)]
+    W[Container App : worker] --> P
+    D --> F[Azure Files : documents, sauvegardes et état partagé]
+    W --> F
+    J[Job manuel : migrations et ETL] --> P
+    J --> F
+    K[Key Vault : secrets] --> D
+    K --> W
+    A[ACR : image applicative] --> D
+    A --> W
+    A --> J
+```
+
+| Composant | Configuration préparée |
+|---|---|
+| Dashboard | HTTPS vers Streamlit, accès limité à l'IPv4 `/32` configurée |
+| Worker | Une instance, sans entrée publique, traitement de la file SQL existante |
+| PostgreSQL | Flexible Server 16, réseau et DNS privés, connexion TLS |
+| Documents et fichiers | Trois partages Azure Files : `data`, `backups`, `runtime` |
+| Image | ACR avec identité managée ; image référencée par digest immuable |
+| Secrets | Coffre Key Vault créé par Terraform par défaut ; clé LLM injectée uniquement dans le worker |
+| Initialisation | Job manuel, puis vérification des migrations avant démarrage des applications |
+
+Le filtrage IP ne connecte pas les utilisateurs : l'authentification Entra du dashboard reste à ajouter avant une ouverture partagée. L'OIDC du workflow sert à authentifier GitHub auprès d'Azure.
+
+### Parcours de mise en service
+
+1. **Tester une restauration PostgreSQL 16**, en conservant la base locale ; le problème connu des outils 17/serveur 16 doit être traité avant migration.
+2. Configurer l'abonnement Azure, le backend Blob du state et les droits nécessaires. Le coffre Key Vault sera créé par Terraform ; un coffre existant peut aussi être réutilisé.
+3. Produire et examiner un plan Terraform, puis créer la fondation après validation des ressources et du budget. Les applications restent désactivées. Renseigner ensuite le mot de passe PostgreSQL et la clé LLM dans le coffre ; leurs valeurs restent hors du code Terraform.
+4. Préparer un contexte de construction propre, publier l'image dans ACR et renseigner son digest ; transférer les documents et restaurer les données via un accès au réseau privé.
+5. Lancer le job d'initialisation, attendre réellement `Succeeded` et contrôler la conservation des 65 rappels et 67 analyses du corpus existant.
+6. Activer les deux Container Apps et vérifier les accès, les montages, le dashboard et un traitement complet dans Azure.
+
+Les données existantes ne sont ni incluses dans l'image ni transférées automatiquement par Terraform. Une installation sans corpus démarre avec une base vide, sans historique fictif.
+
+**Guide détaillé : [infra/azure/README.md](infra/azure/README.md)** — prérequis, trois phases Terraform, secrets, backend, commandes et limites. Aucun déploiement cloud fonctionnel n'est annoncé à ce stade.
+
+## Intégration continue et infrastructure
+
+Deux workflows sont présents dans [`.github/workflows/`](.github/workflows/) :
+
+- [`ci.yml`](.github/workflows/ci.yml) prévoit les contrôles sur push, pull request ou lancement manuel : validation des workflows, démarrage Docker isolé, tests sur PostgreSQL réel et tests Terraform avec un fournisseur simulé. Les appels LLM sont simulés et la base métier n'est pas utilisée comme base jetable.
+- [`terraform-azure.yml`](.github/workflows/terraform-azure.yml) prépare un plan ou un apply sur lancement manuel depuis la branche par défaut. Il utilise OIDC, un backend distinct de l'ancien exemple VM et la confirmation `CREATE-ETICS-AZURE` pour appliquer. Les environnements et protections GitHub doivent être configurés dans le dépôt cible.
+
+Ces fichiers n'ont pas été poussés : aucun résultat d'exécution sur GitHub Actions n'est revendiqué. Le workflow d'infrastructure ne publie pas automatiquement d'image et ne lance pas de nouvelle analyse LLM. Les vérifications locales réalisées sont indiquées ci-dessous.
+
 ## Structure du projet
 
 ```text
@@ -197,6 +257,8 @@ Les requêtes de [src/dwh/queries.sql](src/dwh/queries.sql) permettent l'analyse
 │   └── pipeline.py            # Point d'entrée du pipeline
 ├── prompts/                   # Prompts versionnés
 ├── tests/                     # Tests unitaires et intégration PostgreSQL
+├── .github/workflows/         # CI et workflow manuel d'infrastructure Azure
+├── infra/azure/               # Terraform, adaptateurs cloud, scripts, tests et guide
 ├── assets/screenshots/        # Captures réelles utilisées dans ce README
 ├── data/                      # Sources, textes et JSON locaux, hors Git
 ├── backups/                   # Sauvegardes locales, hors Git
@@ -257,7 +319,21 @@ docker compose exec -T worker python -m src.container test -q -p no:cacheprovide
 
 Le rôle `test` utilise la base d'administration PostgreSQL pour créer des bases/schémas temporaires ; les tests ne doivent pas prendre la base métier comme cible de remplacement. Les clients LLM des tests sont simulés : la suite ne consomme pas de quota d'inférence.
 
-**Dernière suite complète exécutée le 29 octobre 2026 : 233 tests réussis, 1 ignoré, aucun échec**, dans Docker avec PostgreSQL 16.15. Le test ignoré est la variante SQLite d'un contrôle propre à la migration PostgreSQL. Ces résultats ne certifient pas l'exactitude scientifique des verdicts ni la disponibilité d'un fournisseur externe.
+**Dernière suite complète exécutée le 29 octobre 2026 : 248 tests réussis, 1 ignoré, aucun échec**, dans un projet Docker temporaire avec PostgreSQL 16. Ce total inclut les tests des adaptateurs cloud et le contrôle réel du schéma PostgreSQL avant/après migrations. Le test ignoré est la variante SQLite d'un contrôle propre à la migration PostgreSQL. Ces résultats ne certifient pas l'exactitude scientifique des verdicts ni la disponibilité d'un fournisseur externe.
+
+La configuration d'infrastructure a aussi passé `terraform fmt`, `terraform validate` et **12 tests Terraform simulés sous Windows et Linux**, incluant la création du Key Vault et la réutilisation d'un coffre existant, ainsi que les contrôles actionlint/ShellCheck des deux workflows. Les contrôles HTTP du dashboard et de santé du worker ont réussi dans le projet Compose temporaire. Les 15 tables historiques contrôlées ont conservé leurs comptages et empreintes, dont 67 résultats LLM et 67 faits DWH. Aucun appel LLM n'a été effectué pour ces vérifications.
+
+Pour valider uniquement Terraform sans connexion Azure, depuis la racine du dépôt et avec Terraform 1.17.1 installé :
+
+```powershell
+cd infra/azure
+terraform fmt -check -recursive
+terraform init -backend=false -input=false -lockfile=readonly
+terraform validate
+terraform test
+```
+
+Les tests Terraform ne créent aucune ressource Azure. TLS, droits, montages et accès réels restent à vérifier lors du déploiement cloud.
 
 Lors du même audit, les huit instructions SQL analytiques ont été exécutées sur les données réelles. Deux relances de l'ETL ont chacune produit zéro insertion et zéro modification. Les empreintes des 15 tables historiques contrôlées étaient inchangées.
 
@@ -323,7 +399,7 @@ Couverture des sources, exécutions et chargements ETL, avec accès aux dimensio
 
 **Restauration des sauvegardes : point ouvert.** Le test du 29 octobre 2026 a rencontré une incompatibilité entre `pg_restore 17.11` de l'image applicative et PostgreSQL 16.15 : paramètre `transaction_timeout` non reconnu. La création d'une archive et son checksum ne suffisent pas à valider sa restauration. Aligner les outils sur le serveur et tester la reprise dans une base isolée ; la restauration des archives déjà produites avec les outils 17 doit être vérifiée séparément. Ce README ne déclare pas ce problème résolu.
 
-L'application est destinée à un usage local. Une mise à disposition partagée nécessite notamment une authentification et des rôles PostgreSQL adaptés. Les identifiants entreprise fondés sur des noms et les pages contenant plusieurs rappels demandent une attention particulière lors de l'interprétation des résultats.
+Le parcours local est vérifié ; la configuration cloud reste à éprouver dans Azure. Une mise à disposition partagée nécessite notamment une authentification et des rôles PostgreSQL adaptés. Le state Terraform reste sensible et doit être protégé ; les marqueurs `sensitive` ne chiffrent pas un fichier de state local. Les identifiants entreprise fondés sur des noms et les pages contenant plusieurs rappels demandent une attention particulière lors de l'interprétation des résultats.
 
 ## Documentation
 
@@ -332,5 +408,8 @@ L'application est destinée à un usage local. Une mise à disposition partagée
 | [DWH.md](DWH.md) | Migrations, modèle de l'entrepôt, SCD Type 2, provenance et limites historiques |
 | [DASHBOARD.md](DASHBOARD.md) | Vues, filtres, exports et accès aux données |
 | [AUTOMATISATION.md](AUTOMATISATION.md) | Dépôts, doublons, états du worker et reprises sur erreur |
+| [infra/azure/README.md](infra/azure/README.md) | Architecture Container Apps, déploiement Terraform, OIDC, secrets et limites |
+| [.github/workflows/ci.yml](.github/workflows/ci.yml) | Contrôles Docker/PostgreSQL et Terraform sans compte Azure |
+| [.github/workflows/terraform-azure.yml](.github/workflows/terraform-azure.yml) | Workflow manuel de plan/apply et vérification du job d'initialisation |
 | [src/dwh/queries.sql](src/dwh/queries.sql) | Requêtes pour explorer les scores, verdicts, protocoles et versions observées |
 | [.env.example](.env.example) | Variables de configuration à renseigner localement |

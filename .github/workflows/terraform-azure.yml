@@ -1,0 +1,129 @@
+name: ETICS - Infrastructure Container Apps manuelle
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: Planifier ou créer/mettre à jour l'infrastructure
+        type: choice
+        options: [plan, apply]
+        default: plan
+        required: true
+      run_initialization:
+        description: Exécuter le job après apply, applications encore désactivées
+        type: boolean
+        default: false
+      confirmation:
+        description: Pour apply, saisir CREATE-ETICS-AZURE
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: terraform-azure-etics
+  cancel-in-progress: false
+
+jobs:
+  infrastructure:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment:
+      name: ${{ inputs.operation == 'apply' && 'azure-apply' || 'azure-plan' }}
+    permissions:
+      contents: read
+      id-token: write
+    defaults:
+      run:
+        working-directory: infra/azure
+    env:
+      TF_IN_AUTOMATION: "true"
+      ARM_USE_OIDC: "true"
+      ARM_USE_AZUREAD: "true"
+      ARM_USE_CLI: "false"
+      ARM_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+      ARM_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      TF_VAR_subscription_id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      TF_VAR_key_vault_id: ${{ vars.TF_KEY_VAULT_ID }}
+      TF_VAR_postgres_password_secret_id: ${{ vars.TF_POSTGRES_PASSWORD_SECRET_ID }}
+      TF_VAR_llm_api_key_secret_id: ${{ vars.TF_LLM_API_KEY_SECRET_ID }}
+      TF_VAR_postgres_admin_password: ${{ secrets.TF_POSTGRES_ADMIN_PASSWORD }}
+      TF_VAR_dashboard_source_cidr: ${{ vars.TF_DASHBOARD_SOURCE_CIDR }}
+      TF_VAR_app_image: ${{ vars.ETICS_IMAGE }}
+      TF_VAR_application_enabled: ${{ vars.TF_APPLICATION_ENABLED || 'false' }}
+      TF_VAR_database_initialized: "false"
+      TF_STATE_RESOURCE_GROUP: ${{ vars.TF_STATE_RESOURCE_GROUP }}
+      TF_STATE_STORAGE_ACCOUNT: ${{ vars.TF_STATE_STORAGE_ACCOUNT }}
+      TF_STATE_CONTAINER: ${{ vars.TF_STATE_CONTAINER }}
+      REQUESTED_OPERATION: ${{ inputs.operation }}
+      APPLY_CONFIRMATION: ${{ inputs.confirmation }}
+      RUN_INITIALIZATION: ${{ inputs.run_initialization }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Vérifier la configuration et la confirmation
+        run: |
+          set -euo pipefail
+          for name in ARM_CLIENT_ID ARM_TENANT_ID ARM_SUBSCRIPTION_ID TF_VAR_postgres_admin_password TF_VAR_dashboard_source_cidr TF_STATE_RESOURCE_GROUP TF_STATE_STORAGE_ACCOUNT TF_STATE_CONTAINER; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Variable manquante : $name"
+              exit 1
+            fi
+          done
+          if [ "$REQUESTED_OPERATION" = apply ] && [ "$APPLY_CONFIRMATION" != CREATE-ETICS-AZURE ]; then
+            echo "::error::Confirmation CREATE-ETICS-AZURE requise."
+            exit 1
+          fi
+          if [ "$RUN_INITIALIZATION" = true ] && [ "$TF_VAR_application_enabled" = true ]; then
+            echo "::error::L'initialisation de première installation précède l'activation des applications."
+            exit 1
+          fi
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3.1.0
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
+        with:
+          terraform_version: 1.17.1
+          terraform_wrapper: false
+      - name: Isoler le cache Terraform
+        run: echo "TF_DATA_DIR=$RUNNER_TEMP/etics-terraform" >> "$GITHUB_ENV"
+      - run: terraform fmt -check -recursive
+      - name: Initialiser le backend distinct du projet VM
+        run: |
+          terraform init -input=false -lockfile=readonly \
+            -backend-config="resource_group_name=$TF_STATE_RESOURCE_GROUP" \
+            -backend-config="storage_account_name=$TF_STATE_STORAGE_ACCOUNT" \
+            -backend-config="container_name=$TF_STATE_CONTAINER" \
+            -backend-config="key=etics-container-apps-dev.tfstate" \
+            -backend-config="use_azuread_auth=true" \
+            -backend-config="use_oidc=true"
+      - run: terraform validate -no-color
+      - name: Vérifier l'initialisation avant activation
+        if: vars.TF_APPLICATION_ENABLED == 'true'
+        run: |
+          az extension add --name containerapp --upgrade --yes --only-show-errors
+          python scripts/initialization.py verify \
+            --resource-group "$(terraform output -raw resource_group_name)" \
+            --job-name "$(terraform output -raw initialization_job_name)"
+          echo "TF_VAR_database_initialized=true" >> "$GITHUB_ENV"
+      - name: Produire le plan
+        run: terraform plan -input=false -lock-timeout=5m -out=tfplan
+      - name: Appliquer ce plan
+        if: inputs.operation == 'apply'
+        run: terraform apply -input=false -lock-timeout=5m tfplan
+      - name: Initialiser la base sur demande explicite
+        if: inputs.operation == 'apply' && inputs.run_initialization
+        run: |
+          az extension add --name containerapp --upgrade --yes --only-show-errors
+          python scripts/initialization.py start \
+            --resource-group "$(terraform output -raw resource_group_name)" \
+            --job-name "$(terraform output -raw initialization_job_name)"
+      - name: Afficher les accès
+        if: inputs.operation == 'apply'
+        run: terraform output -no-color

@@ -1,0 +1,7 @@
+# Backend Blob existant. Clé distincte de l'ancien projet VM.
+resource_group_name = "rg-etics-tfstate"
+storage_account_name = "REPLACE_WITH_UNIQUE_LOWERCASE_NAME"
+container_name = "tfstate"
+key = "etics-container-apps-dev.tfstate"
+use_azuread_auth = true
+use_cli = true
